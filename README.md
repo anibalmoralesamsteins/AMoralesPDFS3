@@ -1,0 +1,15 @@
+- instalar serverless mediante "npm install -g serverless"
+- se ejecuta el comando "serverless" para inicializar con el template de aws-python-starter
+- nombrar el proyecto "AMoralesPDFS3"
+- Luego, se debe agregar el plugin serverless-offline mediante el comando "npm install serverless-offline --save-dev"
+- Luego, se debe agregar el plugin de s3 local mediante el comando "npm install serverless-s3-local --save-dev"
+- crear nuevo ambiente virtual meidante el comando "python -m venv pyenv"
+- activar el ambiente mediante el comando ".\pyenv\Scripts.\activate"
+- instalar librearias python (fpdf,requests,boto3) mediante el comando "pip install"
+- Utilizamos el archivo serverless.yml presente en el repositorio junto al handler.py, pdf_generator.py y s3.py
+- El archivo de configuracion de serverless tendra dentro de el una funcion configurada para ser llamada por metodo get
+- Ejecutamos el proyecto mediante el comando "serverless offline start"
+- Ingresamos a la direccion que se nos entrega por consola al inicar el proyecto, junto a la direccion '/dev/do_pdf'
+- Acceder a http://localhost:3000/dev/do_pdf para crear el pdf
+- Esto de ser haber sido configurado de la manera indicada, debe devolver el mensaje "Se ha creado el archivo con el precio de la UF."
+- Los archivos seran guardados en la ruta /tmp/local-bucket/pdfs dentro del mismo proyecto

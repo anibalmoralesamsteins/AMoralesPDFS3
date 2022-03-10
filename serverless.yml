@@ -1,0 +1,32 @@
+service: eDarkstore
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  do_pdf:
+    handler: handler.doUFPdf
+    events: 
+      - http:
+          path: do_pdf
+          method: get
+
+plugins:
+  - serverless-offline
+  - serverless-s3-local
+custom:
+  s3:
+    host: localhost
+    directory: ./tmp
+    port: 4569
+
+resources:
+  Resources:
+    NewResource:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: local-bucket
+
